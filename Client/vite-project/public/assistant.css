@@ -1,0 +1,708 @@
+
+/* //togal btn// */
+.shifra-btn{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+
+  width: 60px;
+  height: 60px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #6d5efc,
+    #36d1dc
+  );
+
+  color: #fff;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+
+}
+.shifra-btn img{
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+
+.shifra-popup {
+  position: fixed;
+  right: 18px;
+  bottom: 98px;
+
+  width: 360px;
+  max-width: calc(100vw - 20px);
+  height: 580px;
+
+  border-radius: 32px;
+  overflow: hidden;
+  z-index: 999999;
+
+  display: flex;
+
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.32);
+}
+
+/* ===========================
+   OVERLAY
+=========================== */
+
+.shifra-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.shifra-content {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 24px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #fff;
+  border-radius: 32px;
+}
+
+/* ===========================
+   TOP SECTION
+=========================== */
+
+.shifra-top {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  flex: 1;
+}
+
+/* ===========================
+   ORB
+=========================== */
+
+.shifra-orb-wrap {
+  position: relative;
+  margin-top: 10px;
+}
+
+.shifra-orb-glow {
+  position: absolute;
+  inset: 0;
+
+  transform: scale(1.6);
+  border-radius: 50%;
+
+  background: rgba(0, 123, 255, 0.3);
+  filter: blur(45px);
+}
+
+.shifra-orb {
+  position: relative;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #6d5efc,
+    #36d1dc
+  );
+
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.shifra-title {
+  margin-top: 24px;
+
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+
+  color: #111;
+}
+
+.shifra-subt {
+  margin-top: 12px;
+
+  font-size: 15px;
+  line-height: 1.6;
+
+  color: #666;
+}
+
+.shifra-status {
+  margin-top: 22px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #444;
+}
+
+/* ===========================
+   WAVE
+=========================== */
+
+.shifra-wave {
+
+  margin-top: 20px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 5px;
+
+  height: 36px;
+
+  opacity: .4;
+
+  transition: .3s;
+}
+
+.shifra-wave-active {
+  opacity: 1;
+}
+
+.shifra-wave span {
+
+  width: 4px;
+
+  background: #007bff;
+
+  border-radius: 999px;
+
+  animation: wave 1.2s infinite ease-in-out;
+
+}
+
+.shifra-wave span:nth-child(1) {
+  height: 14px;
+}
+
+.shifra-wave span:nth-child(2) {
+  height: 28px;
+}
+
+.shifra-wave span:nth-child(3) {
+  height: 18px;
+}
+
+.shifra-wave span:nth-child(4) {
+  height: 34px;
+}
+
+.shifra-wave span:nth-child(5) {
+  height: 22px;
+}
+
+.shifra-wave span:nth-child(6) {
+  height: 28px;
+}
+
+@keyframes wave {
+
+  0% {
+    transform: scaleY(.7);
+    opacity: .4;
+  }
+
+  50% {
+    transform: scaleY(1.3);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(.7);
+    opacity: .4;
+  }
+
+}
+
+/* ===========================
+   USER & AI TEXT
+=========================== */
+
+.shifra-user-text,
+.shifra-ai-text {
+
+  margin-top: 18px;
+
+  font-size: 14px;
+
+  color: #666;
+
+  text-align: center;
+}
+
+/* ===========================
+   BOTTOM
+=========================== */
+
+.shifra-bottom {
+  position: relative;
+
+  width: 130px;
+height:130px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding-bottom: 10px;
+}
+
+/* ===========================
+   MIC BUTTON
+=========================== */
+
+.shifra-mic {
+  position: relative;
+   z-index: 2;
+  width: 74px;
+  height: 74px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    #6d5efc,
+    #36d1dc
+  );
+  color: #fff;
+
+  display: flex;
+
+  justify-content: center;
+font-size: 26px;
+  align-items: center;
+
+  cursor: pointer;
+
+  transition: .3s;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+  animation: micfloat 2s infinite ease-in-out;
+
+}
+
+.shifra-mic:hover {
+
+  transform: scale(1.08);
+
+}
+
+@keyframes micfloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+.shifra-mic:active {
+
+  transform: scale(.95);
+
+}
+
+.shifra-mic-icon {
+
+  width: 34px;
+
+  height: 34px;
+
+  object-fit: contain;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 480px) {
+
+  .shifra-popup {
+
+    right: 10px;
+
+    bottom: 10px;
+
+    width: calc(100vw - 20px);
+
+    height: calc(100vh - 20px);
+
+    border-radius: 24px;
+
+  }
+
+  .shifra-content {
+
+    border-radius: 24px;
+
+  }
+
+  .shifra-title {
+
+    font-size: 24px;
+
+  }
+
+}
+
+.theme-dark{
+  background: #050505; ;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+}
+
+.theme-dark.shifra-overlay{
+  background: radial-gradient(
+    circle at top,
+    rgba(168,85,274,0.18),
+    transparent 45%
+  );
+}
+
+.theme-dark.shifra-orb,
+.theme-dark.shifra-orb-glow{
+  background: linear-gradient(
+    135deg,
+    #6d5efc,
+    #36d1dc
+    #ec4899
+  );
+}
+
+.theme-dark .shifra-title{
+  color: white;
+}
+
+.theme-dark .shifra-sub{
+  color: rgb(255, 255, 255,0.68)
+}
+  
+.theme-dark .shifra-status{
+  color:#22e3a6
+}
+.theme-dark .shifra-wave span{
+  background: #22e3a6;
+
+}
+.theme-dark .shifra-user-text{
+  color: white;
+}
+
+.theme-dark .shifra-ai-text{
+  color: rgba(255, 255, 255, 0.78);
+}
+  
+.theme-dark .shifra-mic,
+.theme-dark .shifra-btn{
+  background: linear-gradient(
+    135deg,
+    #6d5efc,
+    #36d1dc
+    #ec4899
+  );
+  box-shadow: 
+  0 0 35px rgba(124, 58, 237, 0.55),
+  0 0 90px rgba(79,140,255,0.38),
+  0 0 150px rgba(124, 58, 237, 0.25);
+}
+
+
+.theme-light{
+  background: 
+linear-gradient(
+    135deg,
+    #ffffff,
+    #eef6ff
+  );
+
+  border: 1px solid #dbeafe;
+}
+
+.theme-light.shifra-overlay{
+  background: radial-gradient(
+    circle at top,
+    rgba(59,130,246,0.12),
+    transparent 45%
+  );
+}
+
+.theme-light.shifra-orb,
+.theme-light.shifra-orb-glow{
+  background: linear-gradient(
+    135deg,
+    #7dd3fc,
+    #36d1dc,
+    #a5b4fc
+  );
+}
+
+.theme-light .shifra-title{
+  color: #111;
+}
+
+.theme-light .shifra-sub{
+  color: #666;
+}
+
+.theme-light .shifra-status{
+  color:#3b82f6
+}
+
+.theme-light .shifra-wave span{
+  background: #3b82f6;
+}
+
+.theme-light .shifra-user-text{
+  color: #111;
+}
+
+.theme-light .shifra-ai-text{
+  color: #475569;
+}
+
+.theme-light .shifra-mic,
+.theme-light .shifra-btn{
+  background: linear-gradient(
+    135deg,
+    #7dd3fc,
+    #36d1dc,
+    #a5b4fc
+  );
+  box-shadow: 
+  0 0 30px rgba(59, 130, 246,0.38),
+  0 0 85px rgba(6, 182, 212,0.28),
+  0 0 130px rgba(59, 130, 246,0.16);
+}
+
+
+.theme-glass{
+  background: 
+  rgba(0,0,0,0.28);
+  backdrop-filter: blur(45px);
+  -webkit-backdrop-filter: blur(45px);
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.theme-glass.shifra-overlay{
+  background: 
+  radial-gradient(
+    circle at top,
+    rgba(255,255,255,0.5),
+    transparent 45%
+  );
+}
+
+.theme-glass.shifra-orb,
+.theme-glass.shifra-orb-glow{
+  background:
+  linear-gradient(
+    135deg,
+    #bae6fd,
+    #c4b5fd,
+    #f5d0fe
+
+  );
+}
+
+.theme-glass.shifra-title{
+  color: white;
+}
+
+.theme-glass.shifra-sub{
+  color: rgba(255,255,255,0.75);
+}
+
+.theme-glass.shifra-status{
+  color: #a5f3fc;
+}
+
+.theme-glass.shifra-wave span{
+  background:#a5f3fc;
+}
+
+.theme-glass.shifra-user-text{
+  color: white;
+}
+.theme-glass.shifra-ai-text{
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.theme-glass.shifra-mic,
+.theme-glass.shifra-btn{
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #8b5cf6,
+    #f5d0fe
+  );
+  box-shadow: 
+  0 0 35px rgba(34,211,238,0.38),
+  0 0 90px rgba(139,92,246,0.28),
+  0 0 150px rgba(56,189,248,0.16);
+}
+
+.theme-neon{
+  background: #030303;
+  border: 1px solid rgba(16, 185, 129, 0.18);
+
+}
+
+.theme-neon.shifra-overlay{
+  background: radial-gradient(
+    circle at top,
+    rgba(16, 185, 129, 0.18),
+    transparent 45%
+  );
+}
+
+.theme-neon.shifra-orb,
+.theme-neon.shifra-orb-glow{
+  background: linear-gradient(
+    135deg,
+    #22d0e3,
+    #36dcb3,
+    #14b8b3
+
+  );
+}
+.theme-neon.shifra-title{
+  color: #ecfdf5;
+}
+
+.theme-neon.shifra-sub{
+  color: rgba(209, 250, 229, 0.72);
+}
+
+.theme-neon.shifra-status{
+  color: #22e3a6;
+}
+
+.theme-neon.shifra-wave span{
+  background: #22e3a6;
+}
+
+.theme-neon.shifra-user-text{
+  color: #ecfdf5;
+}
+
+.theme-neon.shifra-ai-text{
+  color: rgba(209, 250, 229, 0.72);
+}
+
+.theme-neon.shifra-mic,
+.theme-neon.shifra-btn{
+  background: linear-gradient(
+    135deg,
+    #22c55e,
+    #36dcb3,
+    #14b914
+  );
+  box-shadow: 
+  0 0 35px rgba(16, 185, 129, 0.45),
+  0 0 90px rgba(34, 197, 94, 0.32),
+  0 0 150px rgba(16, 185, 129, 0.20);
+}
+
+@media (max-width: 640px) {
+  .shifra-popup {
+    right: 50%;
+    bottom: 82px;
+    transform: translateX(50%);
+    width: 340px;
+    min-width: 340px;
+    max-width: 340px;
+    height: 560px;
+    min-height: 560px;
+    max-height: 560px;
+    border-radius: 30px;
+  }
+
+  .shifra-btn{
+    width: 64px;
+    height: 64px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .shifra-btn img{
+    width: 36px;
+    height: 36px;
+  }
+
+  .shifra-content {
+    border-radius: 24px;
+  }
+
+  .shifra-title {
+    font-size: 26px;
+  }
+  .shifra-sub {
+    font-size: 14px;
+  }
+}

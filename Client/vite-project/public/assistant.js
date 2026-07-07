@@ -1,0 +1,367 @@
+
+
+// (function () {
+//     //user data
+
+//     const script = document.currentScript;
+
+//     const userId = script?.dataset?.userId;
+
+//     // console.log(use);
+
+//     const theme = 'dark';
+
+//     const assistantConfig = null
+
+
+//     //load css
+
+//     const link = document.createElement('link');
+
+//     link.rel = 'stylesheet';
+
+//     link.href = 'https://localhost:5173/assistant.css';
+
+//     document.head.appendChild(link);
+
+
+//     // create popup 
+
+//     const popup = document.createElement('div');
+
+//     popup.className = `shifra-popup theme-${theme}`;
+
+//     popup.innerHTML = `
+// <div class="shifra-overlay">
+// </div>
+// <div class="shifra-content">
+
+// <div class="shifra-top">
+
+// <div class="shifra-orb-wrap">
+// <div class="shifra-orb-glow"></div>
+
+// <div class="shifra-orb"></div>
+
+// </div>
+// <h2 class="shifra-title"> Hello! I'm Shifra Assistant</h2>
+
+// <p class="shifra-subt">
+//  Your smart  voice assistant.
+// <br/>
+// Ask me anything about your website.
+// </p>
+
+// <div class="shifra-status">
+// Tap button to speak 
+// </div>
+
+// <div class="shifra-wave">
+// <span></span>
+// <span></span>
+// <span></span>
+// <span></span>
+// <span></span>
+// <span></span>
+// </div>
+
+// <div class="shifra-user-text">user </div>
+
+// <div class="shifra-ai-text"> AI</div>
+// </div>
+
+// <div class="shifra-bottom">
+// <button class="shifra-mic">
+// <img
+// src="https://localhost:5173/mic.png"
+// alt="mic"
+// class="shifra-mic-icon" />
+
+// </button>
+
+// </div>
+
+// </div>
+// `;
+
+// document.body.appendChild(popup);
+
+
+
+// })();
+
+// (function () {
+
+//     // User Data
+//     const script = document.currentScript;
+//     const userId = script?.dataset?.userId;
+
+//     console.log("User:", userId);
+
+//     const theme ="dark"; // or "dark"
+
+//     // Load CSS
+//     const link = document.createElement("link");
+//     link.rel = "stylesheet";
+//     link.href = "http://localhost:5173/assistant.css";
+
+//     document.head.appendChild(link);
+
+//     // Popup
+//     const popup = document.createElement("div");
+//     popup.className = `shifra-popup theme-${theme}`;
+
+//     popup.innerHTML = `
+// <div class="shifra-overlay"></div>
+
+// <div class="shifra-content">
+
+//     <div class="shifra-top">
+
+//         <div class="shifra-orb-wrap">
+//             <div class="shifra-orb-glow"></div>
+//             <div class="shifra-orb"></div>
+//         </div>
+
+//         <h2 class="shifra-title">
+//             Hello! I'm Shifra Assistant
+//         </h2>
+
+//         <p class="shifra-subt">
+//             Your smart voice assistant.
+//             <br>
+//             Ask me anything about your website.
+//         </p>
+
+//         <div class="shifra-status">
+//             Tap button to speak
+//         </div>
+
+//         <div class="shifra-wave">
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//             <span></span>
+//         </div>
+
+//         <div class="shifra-user-text">User</div>
+//         <div class="shifra-ai-text">AI</div>
+
+//     </div>
+
+//     <div class="shifra-bottom">
+//         <button class="shifra-mic">
+//             <img
+//                 src="http://localhost:5173/mic.png"
+//                 class="shifra-mic-icon"
+//                 alt="Mic"
+//             />
+//         </button>
+//     </div>
+
+// </div>
+// `;
+
+//     document.body.appendChild(popup);
+
+//     //floting mic button
+
+//     const button = document.createElement("button");
+
+//     button.className=`shifra-btn theme-${theme}`
+
+//     button.innerHTML = `
+//     <img 
+//     src="http://localhost:5173/logo.png"
+//     alt="logo"
+//     />
+//     `;
+
+//     document.body.appendChild(button);
+
+//     //toggle popup
+//  let isOpen = false;
+
+//  button.onclick = () => {
+//         isOpen = !isOpen;
+//         popup.style.display = isOpen ? "flex" : "none";
+//  }
+// })();
+
+(function () {
+
+    // User Data
+    const script = document.currentScript;
+    const userId = script?.dataset?.userId || "";
+
+    console.log("User:", userId);
+
+    // Theme
+    const theme = "dark";
+    let assistantConfig = null; 
+
+    // Load CSS
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "http://localhost:5173/assistant.css";
+    document.head.appendChild(link);
+
+    // ==========================
+    // Popup
+    // ==========================
+
+    const popup = document.createElement("div");
+    popup.className = `shifra-popup theme-${theme}`;
+
+    popup.innerHTML = `
+<div class="shifra-overlay"></div>
+
+<div class="shifra-content">
+
+    <div class="shifra-top">
+
+        <div class="shifra-orb-wrap">
+            <div class="shifra-orb-glow"></div>
+            <div class="shifra-orb"></div>
+        </div>
+
+        <h2 class="shifra-title">
+            Hello! I'm Shifra Assistant
+        </h2>
+
+        <p class="shifra-subt">
+            Your smart voice assistant.
+            <br>
+            Ask me anything about your website.
+        </p>
+
+        <div class="shifra-status">
+            Tap button to speak
+        </div>
+
+        <div class="shifra-wave">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="shifra-user-text">
+            User
+        </div>
+
+        <div class="shifra-ai-text">
+            AI
+        </div>
+
+    </div>
+
+    <div class="shifra-bottom">
+
+        <button class="shifra-mic">
+
+            <img
+                src="http://localhost:5173/mic.png"
+                class="shifra-mic-icon"
+                alt="Mic"
+            />
+
+        </button>
+
+    </div>
+
+</div>
+`;
+
+    document.body.appendChild(popup);
+
+    // Hide popup initially
+    popup.style.display = "none";
+
+    // ==========================
+    // Floating Button
+    // ==========================
+
+    const button = document.createElement("button");
+
+    button.className = `shifra-btn theme-${theme}`;
+
+    button.innerHTML = `
+        <img
+            src="http://localhost:5173/logo.png"
+            alt="logo"
+        />
+    `;
+
+    document.body.appendChild(button);
+
+    // ==========================
+    // Toggle Popup
+    // ==========================
+
+    let isOpen = false;
+
+    button.addEventListener("click", () => {
+
+        isOpen = !isOpen;
+
+        popup.style.display = isOpen ? "flex" : "none";
+
+    });
+
+    // ==========================
+    // Close Popup
+    // ==========================
+
+    popup.querySelector(".shifra-overlay").addEventListener("click", () => {
+
+        popup.style.display = "none";
+
+        isOpen = false;
+
+    });
+
+    const loadAssistant = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/api/assistant/config/${userId}`);
+            const data= await response.json();
+            console.log(data);
+            if(data){
+                assistantConfig=data.user
+                applyConfig();
+            }
+            
+
+        } catch (error) {
+            console.log("Assistant load error:",error);
+            
+        }
+    }
+
+    const applyConfig=()=>{
+        if(!assistantConfig)return;
+        popup.className=`shifra-popup theme-${assistantConfig.theme}`;
+
+        button.className=`shifra-btn theme-${assistantConfig.theme}`;
+
+        const title=popup.querySelector(".shifra-title");
+        title.innerHTML=`Hello! I'm ${assistantConfig.assistantName} `;
+
+        const subTitle=popup.querySelector(".shifra-sub");
+
+        subTitle.innerHTML=` 
+        Welcome to ${assistantConfig.businessName}.
+        <br/>
+        Ask me anything about your website.
+
+         `;
+
+loadAssistant();
+    }
+
+
+}) ();

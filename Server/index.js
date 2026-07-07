@@ -6,13 +6,27 @@ import cookieParser from "cookie-parser";
 dotenv.config();
 import cors from "cors";
 import userRouter from "./Routes/user.route.js";
+import assistantRouter from "./Routes/assistant.route.js";
 
-const app = express();
+// const app = express();
+// app.use(cors({
+//     origin: "http://localhost:5173",
+//     credentials: true
+// }));
 
-app.use(cors({
-    origin: "http://localhost:5173",
+const app=express();
+const PrivateCors=
+cors ({
+    origin: ["http://localhost:5173"],
     credentials: true
-}));
+});
+
+const PublicCors=
+cors ({
+    origin: "*",
+    credentials: true
+});
+
 app.use(express.json());
 app.use(cookieParser());
 
@@ -20,10 +34,17 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-app.use("/api/auth", authRouter);
+// app.use("/api/auth", authRouter);
 
-app.use("/api/user", userRouter);
+// app.use("/api/user", userRouter);
 
+// app.use("/api/assistant", assistantRouter);
+
+app.use("/api/auth",PrivateCors, authRouter);
+
+app.use("/api/user", PrivateCors, userRouter);
+
+app.use("/api/assistant", PublicCors, assistantRouter);
 
 const PORT = process.env.PORT || 5000;
 

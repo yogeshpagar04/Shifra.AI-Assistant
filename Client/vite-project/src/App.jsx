@@ -11,6 +11,7 @@ import Navbaar from './Components/Navbar';
 import ProtectedRoutes from './Components/ProtectedRoutes';
 import {Toaster} from 'react-hot-toast';
 export const ServerUrl = "http://localhost:5000";
+export const CLIENT_URL = "http://localhost:5173";
 
 axios.defaults.withCredentials = true;
 
