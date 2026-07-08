@@ -9,9 +9,9 @@ export const getCurrentUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-      return  res.status(200).json({ user });
+        return res.status(200).json({ user });
     } catch (error) {
-       return res.status(500).json({ message: `get current user error: ${error.message}` });
+        return res.status(500).json({ message: `get current user error: ${error.message}` });
     }
 };
 
@@ -27,27 +27,29 @@ export const SaveAssistant = async (req, res) => {
             geminiApikey,
             pages,
         } = req.body;
-        const user=await User.findById(req.userId);
-        if(!user){
+        
+        const user = await User.findById(req.userId);
+        if (!user) {
             return res.status(404).json({ message: "Failed to get current user" });
         }
-        user.assistantName=assistantName;
-        user.businessName=businessName;
-        user.businessDescription=businessDescription;
-        user.businessType=businessType;
-        user.tone=tone;
-        user.theme=theme;
-        if(geminiApikey){
-            user.geminiApikey=geminiApikey;
+        user.assistantName = assistantName;
+        user.businessName = businessName;
+        user.businessDescription = businessDescription;
+        user.businessType = businessType;
+        user.tone = tone;
+        user.theme = theme;
+        if (geminiApikey) {
+            user.geminiApikey = geminiApikey;
         }
-        user.geminiStatus="active";
+   
+        user.geminiStatus = "active";
 
-        user.pages=pages||[];
+        user.pages = pages || [];
 
-        user.isSetupComplete=true;
+        user.isSetupComplete = true;
 
         await user.save();
-        return res.status(200).json({ message: "Assistant saved successfully",user });
+        return res.status(200).json({ message: "Assistant saved successfully", user });
 
     } catch (error) {
         return res.status(500).json({ message: ` failed to save assistant error: ${error.message}` });

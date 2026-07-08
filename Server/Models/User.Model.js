@@ -187,7 +187,7 @@ const userSchema = new mongoose.Schema(
       default: [],
     },
 
-    geminiApiKey: {
+    geminiApikey: {
       type: String,
       default: "",
     },
