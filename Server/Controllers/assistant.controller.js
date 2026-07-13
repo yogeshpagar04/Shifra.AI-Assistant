@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 import User from "../Models/User.Model.js";
+import { generateGeminiResponse } from "../Configs/gemini.js";
 
 export const getAssistantConfig = async (req, res) => {
     try {
         const{userId}= req.params;
 
-        const user=await User.findById(userId).select("-geminiApiKey")
+        const user=await User.findById(userId).select("-geminiApikey")
 
         if (!user) {
             return res.status(404).json({ message: "User not found" });
@@ -27,7 +28,7 @@ export const getAssistantConfig = async (req, res) => {
 //     if (!user) {
 //         return res.status(404).json({ message: "User not found" });
 //     }
-//         if (!user.geminiApiKey) {
+//         if (!user.geminiApikey) {
 //             return res.status(400).json({ message: "User does not have a Gemini API key added" });
 //         }
 //         if(user.plan==="free" && user.totalMessages>=user.requestLimit){
@@ -103,7 +104,7 @@ export const getAssistantConfig = async (req, res) => {
 
 // User Question: ${message}
 // `;
-// const aiResponse=await generateGeminiResponse(prompt,user.geminiApiKey,user);
+// const aiResponse=await generateGeminiResponse(prompt,user.geminiApikey,user);
 // if(user.plan==="free" ){
 // user.totalMessages+=1;
 // await user.save();
@@ -137,7 +138,7 @@ export const askAssistant = async (req, res) => {
             });
         }
 
-        if (!user.geminiApiKey) {
+        if (!user.geminiApikey) {
             return res.status(400).json({
                 message: "User does not have a Gemini API key added"
             });
@@ -231,7 +232,7 @@ ${message}
 
         const aiResponse = await generateGeminiResponse(
            { prompt,
-            apiKey: user.geminiApiKey,
+            apiKey: user.geminiApikey,
             user }
         );
 

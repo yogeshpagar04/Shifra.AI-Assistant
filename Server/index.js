@@ -24,7 +24,7 @@ cors ({
 const PublicCors=
 cors ({
     origin: "*",
-    credentials: true
+    // credentials: true
 });
 
 app.use(express.json());

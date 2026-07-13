@@ -50,6 +50,32 @@ function App() {
 
   }, []);
 
+  useEffect(() => {
+    if (user?._id) {
+      const script = document.createElement("script");
+      script.src = `${CLIENT_URL}/assistant.js`;
+      script.dataset.userId = user._id;
+      script.async = true;
+      script.id = "dynamic-assistant-script";
+      document.body.appendChild(script);
+
+      return () => {
+        const existingScript = document.getElementById("dynamic-assistant-script");
+        if (existingScript) {
+          existingScript.remove();
+        }
+        const popup = document.querySelector(".shifra-popup");
+        if (popup) {
+          popup.remove();
+        }
+        const openBtn = document.querySelector(".shifra-open-btn");
+        if (openBtn) {
+          openBtn.remove();
+        }
+      };
+    }
+  }, [user]);
+
   return (
 <>
   <Toaster position='top-right' />

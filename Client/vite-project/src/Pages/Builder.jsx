@@ -46,8 +46,8 @@ export default function Builder({ user, setUser }) {
   const [theme, setTheme] = useState(user?.theme || "dark");
   const [tone, setTone] = useState(user?.tone || "friendly");
 
-  const [geminiApiKey, setGeminiApiKey] = useState(
-    user?.geminiApiKey || ""
+  const [geminiApikey, setgeminiApikey] = useState(
+    user?.geminiApikey || ""
   );
 
   const [pages, setPages] = useState(
@@ -101,7 +101,7 @@ export default function Builder({ user, setUser }) {
         businessDescription,
         theme,
         tone,
-        geminiApiKey,
+        geminiApikey,
         pages,
       };
 
@@ -113,7 +113,7 @@ export default function Builder({ user, setUser }) {
         }
       );
 
-      console.log(res.data);
+      // console.log(res.data.user.user._id, "here");
 
       if (res.data?.user) {
         setUser(res.data.user);
@@ -167,7 +167,7 @@ export default function Builder({ user, setUser }) {
     )
   );
 
-  const EmbedCode = `<script src="${CLIENT_URL}/assistant.js"data-user-id="${user?.id}">
+  const EmbedCode = `<script src="${CLIENT_URL}/assistant.js"data-user-id="${user?._id}">
   </script>`;
 
   return (
@@ -254,7 +254,7 @@ export default function Builder({ user, setUser }) {
                   
                   Your website content 
                   
-                  <script src="${CLIENT_URL}/assistant.js" data-user-id="${user?.id}">
+                  <script src="${CLIENT_URL}/assistant.js" data-user-id="${user?._id}">
                   </script>
                   
                   </body>`}
@@ -395,8 +395,8 @@ export default function Builder({ user, setUser }) {
             </div>
             <input type="password"
               placeholder="AIza..."
-              onChange={(e) => setGeminiApiKey(e.target.value)}
-              value={geminiApiKey}
+              onChange={(e) => setgeminiApikey(e.target.value)}
+              value={geminiApikey}
               className="w-full border border-gray-200 rounded-2xl px-4 py-3" />
             <p className="text-xs text-gray-500 mt-3 leading-6">
               Your Api key is securely stored and only used for generating
@@ -455,7 +455,7 @@ export default function Builder({ user, setUser }) {
                 ))}
               </div>
             </div>
-            <button onClick={saveAssistant} disabled={loading} className="w-full h-14 rounded-2xl bg-gradient-to-r from-purple-500
+            <button onClick={saveAssistant} disabled={loading || !assistantName || !businessName || !businessType || !businessDescription || !tone || !theme || !geminiApikey} className="w-full h-14 rounded-2xl bg-gradient-to-r from-purple-500
             to-emerald-500 text-white font-semibold">
               {loading
                 ? "Saving..."

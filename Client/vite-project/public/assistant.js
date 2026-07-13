@@ -189,17 +189,27 @@
         try {
           status.textContent = "Processing...";
 
+          // const response = await fetch("http://localhost:5000/api/assistant/ask", {
+          //   method: "POST",
+          //   // credentials: "include",
+          //   headers: {
+          //     "Content-Type": "application/json"
+          //   },
+          //   body: JSON.stringify({
+          //     userId,
+          //     message: text
+          //   })
+          // });
           const response = await fetch("http://localhost:5000/api/assistant/ask", {
-            method: "POST",
-            credentials: "include",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              userId,
-              message: text
-            })
-          });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    userId,
+    message: text,
+  }),
+});
 
           const data = await response.json();
           console.log("Assistant Response:", data);
@@ -211,7 +221,11 @@
               setTimeout(() => {
                 window.location.href = data.path;
               }, 1500);
+            }else{
+              speak(data.airespons)
             }
+
+            
           } else {
             speak("Response error. Please check your plan.");
           }
