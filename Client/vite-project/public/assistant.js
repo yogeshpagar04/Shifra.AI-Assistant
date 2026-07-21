@@ -109,7 +109,7 @@
 
   const loadAssistant = async () => {
     try {
-      const response = await fetch(`https://shifra-ai-assistant.onrender.com/api/assistant/config/${userId}`);
+      const response = await fetch(`https://shifraaiserver-2eoz.onrender.com/api/assistant/config/${userId}`);
       const data = await response.json();
 
       if (data?.user) {
@@ -203,7 +203,7 @@
           //     message: text
           //   })
           // });
-          const response = await fetch("https://shifra-ai-assistant.onrender.com/api/assistant/ask", {
+          const response = await fetch("https://shifraaiserver-2eoz.onrender.com/api/assistant/ask", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
