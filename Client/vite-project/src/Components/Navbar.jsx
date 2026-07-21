@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ServerUrl } from '../main'; // adjust path if needed
 
-import OIP from '../assets/OIP.Jpeg'
+import OIP from '../assets/OIP.jpeg'
 import { FiLogOut, FiX } from 'react-icons/fi'
 import toast from 'react-hot-toast';
 import { FiMenu } from 'react-icons/fi'
