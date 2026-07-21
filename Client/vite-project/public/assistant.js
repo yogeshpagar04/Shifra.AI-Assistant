@@ -16,7 +16,7 @@
   // ==========================
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "http://localhost:5173/assistant.css";
+  link.href = "https://shifraai-k1ai.onrender.com/assistant.css";
   document.head.appendChild(link);
 
   // ==========================
@@ -55,7 +55,7 @@
 
   <div class="shifra-bottom">
     <button class="shifra-mic">
-      <img src="http://localhost:5173/mic.png" class="shifra-mic-icon" alt="Mic" />
+      <img src="https://shifraai-k1ai.onrender.com/mic.png" class="shifra-mic-icon" alt="Mic" />
     </button>
   </div>
 </div>
@@ -70,7 +70,7 @@
   const button = document.createElement("button");
   button.className = `shifra-btn theme-${defaultTheme}`;
   button.innerHTML = `
-    <img src="http://localhost:5173/logo.png" alt="logo" />
+    <img src="https://shifraai-k1ai.onrender.com/logo.png" alt="logo" />
   `;
   document.body.appendChild(button);
 
