@@ -13,7 +13,7 @@ import {Toaster} from 'react-hot-toast';
 // export const ServerUrl = "http://localhost:5000";
 export const ServerUrl = "https://shifra-ai-assistant.onrender.com";
 
-export const CLIENT_URL = "https://shifraai-assistant-yp.netlify.app/";
+export const CLIENT_URL = "https://shifra-yp-ai-assistant.onrender.com";
 
 // export const CLIENT_URL = "http://localhost:5173";
 // export const CLIENT_URL = "https://shifraai-k1ai.onrender.com";
