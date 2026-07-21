@@ -17,7 +17,9 @@ import assistantRouter from "./Routes/assistant.route.js";
 const app=express();
 const PrivateCors=
 cors ({
-    origin: ["https://shifraai-k1ai.onrender.com"],
+    // origin: ["https://shifraai-k1ai.onrender.com"],
+        origin:"https://shifraai-k1ai.onrender.com",
+
     credentials: true
 });
 
