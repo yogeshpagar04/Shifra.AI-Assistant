@@ -13,7 +13,9 @@ import {Toaster} from 'react-hot-toast';
 // export const ServerUrl = "http://localhost:5000";
 export const ServerUrl = "https://shifra-ai-assistant.onrender.com";
 
-export const CLIENT_URL = "http://localhost:5173";
+// export const CLIENT_URL = "http://localhost:5173";
+export const CLIENT_URL = "https://shifraai-k1ai.onrender.com";
+
 
 axios.defaults.withCredentials = true;
 
