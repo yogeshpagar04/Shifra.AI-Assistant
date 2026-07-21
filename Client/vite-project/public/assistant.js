@@ -16,8 +16,8 @@
   // ==========================
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  // link.href = "https://shifraai-k1ai.onrender.com/assistant.css";
-    link.href = "https://shifraai-assistant-yp.netlify.app//assistant.css";
+  link.href = "https://shifra-yp-ai-assistant.onrender.com/assistant.css";
+    // link.href = "https://shifraai-assistant-yp.netlify.app//assistant.css";
 
   document.head.appendChild(link);
 
@@ -57,7 +57,7 @@
 
   <div class="shifra-bottom">
     <button class="shifra-mic">
-      <img src="https://shifraai-assistant-yp.netlify.app//mic.png" class="shifra-mic-icon" alt="Mic" />
+      <img src="https://shifra-yp-ai-assistant.onrender.com/mic.png" class="shifra-mic-icon" alt="Mic" />
     </button>
   </div>
 </div>
@@ -72,7 +72,7 @@
   const button = document.createElement("button");
   button.className = `shifra-btn theme-${defaultTheme}`;
   button.innerHTML = `
-    <img src="https://shifraai-k1ai.onrender.com/logo.png" alt="logo" />
+    <img src="https://shifra-yp-ai-assistant.onrender.com/logo.png" alt="logo" />
   `;
   document.body.appendChild(button);
 
