@@ -16,7 +16,9 @@
   // ==========================
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "https://shifraai-k1ai.onrender.com/assistant.css";
+  // link.href = "https://shifraai-k1ai.onrender.com/assistant.css";
+    link.href = "https://shifraai-assistant-yp.netlify.app//assistant.css";
+
   document.head.appendChild(link);
 
   // ==========================
@@ -55,7 +57,7 @@
 
   <div class="shifra-bottom">
     <button class="shifra-mic">
-      <img src="https://shifraai-k1ai.onrender.com/mic.png" class="shifra-mic-icon" alt="Mic" />
+      <img src="https://shifraai-assistant-yp.netlify.app//mic.png" class="shifra-mic-icon" alt="Mic" />
     </button>
   </div>
 </div>
