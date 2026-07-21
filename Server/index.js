@@ -18,7 +18,7 @@ const app=express();
 const PrivateCors=
 cors ({
     // origin: ["https://shifraai-k1ai.onrender.com"],
-        origin:"https://shifraai-k1ai.onrender.com",
+        origin:"https://shifraai-assistant-yp.netlify.app",
 
     credentials: true
 });
