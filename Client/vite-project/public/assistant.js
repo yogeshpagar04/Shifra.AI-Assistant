@@ -107,7 +107,7 @@
 
   const loadAssistant = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/assistant/config/${userId}`);
+      const response = await fetch(`https://shifra-ai-assistant.onrender.com/api/assistant/config/${userId}`);
       const data = await response.json();
 
       if (data?.user) {
@@ -141,6 +141,7 @@
     speech.rate = 1;
     speech.pitch = 1;
     speech.volume = 1;
+  
 
     speech.onend = () => {
       status.textContent = "Tap button to speak";
@@ -200,7 +201,7 @@
           //     message: text
           //   })
           // });
-          const response = await fetch("http://localhost:5000/api/assistant/ask", {
+          const response = await fetch("https://shifra-ai-assistant.onrender.com/api/assistant/ask", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
